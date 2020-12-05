@@ -10,6 +10,11 @@ public class QueueData
         this.tail = null;
     }
 
+    public void Enqueue(double newData)
+    {
+        tail = new Node(newData, tail);
+    }
+
     private class Node
     {
         private double data;
