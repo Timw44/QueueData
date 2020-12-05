@@ -15,6 +15,16 @@ public class QueueData
         tail = new Node(newData, tail);
     }
 
+    public void displayList()
+    {
+        Node position = tail;
+        while(position != null)
+        {
+            System.out.print(position.getData() + " ");
+            position = position.getLink();
+        }
+    }
+
     private class Node
     {
         private double data;
