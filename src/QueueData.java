@@ -15,6 +15,19 @@ public class QueueData
         tail = new Node(newData, tail);
     }
 
+    public void Dequeue()
+    {
+        if(head != null)
+        {
+            head = head.getLink();
+        }
+        else
+        {
+            System.out.println("Nothing left to delete.");
+            System.exit(0);
+        }
+    }
+
     public void displayList()
     {
         Node position = tail;
