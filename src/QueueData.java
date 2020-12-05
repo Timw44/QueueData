@@ -3,6 +3,7 @@ public class QueueData
 
     private Node head;
     private Node tail;
+    private int headCount = 0;
 
     public QueueData()
     {
@@ -12,9 +13,14 @@ public class QueueData
 
     public void Enqueue(double newData)
     {
-        head = tail;
-        tail = new Node(newData, tail);
-
+            tail = new Node(newData, tail);
+            head = null;
+            Node tails = tail;
+            while(tails != null)
+            {
+                head = new Node(tails.getData(), head);
+                tails = tails.getLink();
+            }
     }
 
     public void Dequeue()
@@ -22,6 +28,7 @@ public class QueueData
         if(head != null)
         {
             head = head.getLink();
+            //tail = head.getLink();
         }
         else
         {
@@ -32,7 +39,8 @@ public class QueueData
 
     public void displayList()
     {
-        Node position = tail;
+        Node position = head;
+
         while(position != null)
         {
             System.out.print(position.getData() + " ");
