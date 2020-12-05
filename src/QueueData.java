@@ -28,7 +28,13 @@ public class QueueData
         if(head != null)
         {
             head = head.getLink();
-            //tail = head.getLink();
+            Node heads = head;
+            tail = null;
+            while(heads != null)
+            {
+                tail = new Node(heads.getData(), tail);
+                heads = heads.getLink();
+            }
         }
         else
         {
