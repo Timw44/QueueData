@@ -4,7 +4,7 @@ public class QueueData
     private Node head;
     private Node tail;
 
-    public QueueData(Node head, Node tail)
+    public QueueData()
     {
         this.head = null;
         this.tail = null;
