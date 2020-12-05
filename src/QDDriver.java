@@ -19,6 +19,7 @@ public class QDDriver
         System.out.println();
         myQueue.Enqueue(5.2);
         myQueue.displayList();
+        myQueue.listLength();
 
     }
 }

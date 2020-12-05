@@ -1,9 +1,7 @@
 public class QueueData
 {
-
     private Node head;
     private Node tail;
-    private int headCount = 0;
 
     public QueueData()
     {
@@ -41,6 +39,18 @@ public class QueueData
             System.out.println("Nothing left to delete.");
             System.exit(0);
         }
+    }
+
+    public void listLength()
+    {
+        int count = 0;
+        Node position = head;
+        while(position != null)
+        {
+            count++;
+            position = position.getLink();
+        }
+        System.out.println("The list length is: " + count);
     }
 
     public void displayList()
