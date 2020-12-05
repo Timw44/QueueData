@@ -53,6 +53,19 @@ public class QueueData
         System.out.println("The list length is: " + count);
     }
 
+    public void setData(double oldData, double updateData)
+    {
+        Node position = head;
+        while (position != null)
+        {
+            if (position.getData() == oldData)
+            {
+                position.setData(updateData);
+            }
+            position = position.getLink();
+        }
+    }
+
     public void displayList()
     {
         Node position = head;
@@ -85,7 +98,7 @@ public class QueueData
             return link;
         }
 
-        public void setData(int data)
+        public void setData(double data)
         {
             this.data = data;
         }

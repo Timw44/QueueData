@@ -21,5 +21,7 @@ public class QDDriver
         myQueue.displayList();
         myQueue.listLength();
 
+        myQueue.setData(4.4, 3.7);
+        myQueue.displayList();
     }
 }
