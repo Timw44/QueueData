@@ -6,6 +6,12 @@ public class QDDriver
 
         myQueue.Enqueue(3.5);
         myQueue.Enqueue(8.9);
+        myQueue.Enqueue(4.4);
+
+        myQueue.displayList();
+
+        System.out.println();
+        myQueue.Dequeue();
 
         myQueue.displayList();
     }

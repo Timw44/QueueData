@@ -12,7 +12,9 @@ public class QueueData
 
     public void Enqueue(double newData)
     {
+        head = tail;
         tail = new Node(newData, tail);
+
     }
 
     public void Dequeue()
