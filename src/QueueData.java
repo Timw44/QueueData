@@ -1,15 +1,16 @@
 public class QueueData
 {
+    //variables
     private Node head;
     private Node tail;
 
-    public QueueData()
+    public QueueData()//constructor
     {
         this.head = null;
         this.tail = null;
     }
 
-    public void Enqueue(double newData)
+    public void Enqueue(double newData) // adds a new node to the tail
     {
             tail = new Node(newData, tail);
             head = null;
@@ -21,7 +22,7 @@ public class QueueData
             }
     }
 
-    public void Dequeue()
+    public void Dequeue() // deletes a node from the head
     {
         if(head != null)
         {
@@ -41,32 +42,32 @@ public class QueueData
         }
     }
 
-    public void listLength()
+    public void listLength() // displays the # of nodes
     {
         int count = 0;
-        Node position = head;
-        while(position != null)
+        Node heads = head;
+        while(heads != null)
         {
             count++;
-            position = position.getLink();
+            heads = heads.getLink();
         }
         System.out.println("The list length is: " + count);
     }
 
-    public void setData(double oldData, double updateData)
+    public void setData(double oldData, double newData) // changes the Node data that the user selects
     {
-        Node position = head;
-        while (position != null)
+        Node heads = head;
+        while (heads != null)
         {
-            if (position.getData() == oldData)
+            if (heads.getData() == oldData)
             {
-                position.setData(updateData);
+                heads.setData(newData);
             }
-            position = position.getLink();
+            heads = heads.getLink();
         }
     }
 
-    public void displayList()
+    public void displayList() // shows all the Node data in a row
     {
         Node position = head;
 
@@ -77,17 +78,20 @@ public class QueueData
         }
     }
 
-    private class Node
+    private class Node // Node class
     {
+        //variables
         private double data;
         private Node link;
 
+        //constructor
         public Node(double data, Node link)
         {
             this.data = data;
             this.link = link;
         }
 
+        //getters & setters
         public double getData()
         {
             return data;
@@ -103,6 +107,7 @@ public class QueueData
             this.data = data;
         }
 
+        // toString
         public String toString()
         {
             return "Data: " + data + ", Link: " + link + "";
