@@ -1,5 +1,9 @@
 public class QueueData
 {
+
+    private Node head;
+    private Node tail;
+
     private class Node
     {
         private double data;
